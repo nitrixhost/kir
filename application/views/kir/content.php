@@ -1,0 +1,1 @@
+<?php isset($page) ? $this->load->view($page) : null;?>
