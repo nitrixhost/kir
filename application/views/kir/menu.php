@@ -1,3 +1,6 @@
+
+<?php if(current_url() == site_url('home/searchBlanko')){?>
+<?php }else{?>
 <div class="container">
    		<div class="row">
    			<div class="col-md-12">
@@ -22,6 +25,7 @@
  <?php echo $this->lang->line('menu_report');?> </a></li>
         						<li><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>
  <?php echo $this->lang->line('menu_notifikasi');?></a></li>  
+                    <li><a href="#" data-toggle="modal" data-target="#datasearch" data-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i> <?php echo $this->lang->line('menu_blanko');?></a>
 							   </ul>
                  <ul class="nav navbar-nav navbar-right">
                  <form class="navbar-form navbar-right" role="search">
@@ -38,3 +42,28 @@
    				</nav>
    			</div>
    		</div>
+
+
+
+
+<div class="modal fade" id="datasearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel"><?php echo $this->lang->line('title_blanko');?></h4>
+      </div>
+      <div class="modal-body">
+        <?php echo form_open('home/searchBlanko');?>
+          <div class="form-group">
+            <label for="nouji" class="control-label"><?php echo $this->lang->line('label_nouji');?></label>
+            <input type="text" class="form-control" id="noji" name="nouji" required>
+            <p></p> 
+          </div>
+          <input type="submit" class="btn btn-primary" value="<?php echo $this->lang->line('button_submit');?>" id="btn">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<?php }?>

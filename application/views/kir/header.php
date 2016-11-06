@@ -6,10 +6,10 @@
     <meta name="google" value="notranslate" />
     <meta name="format-detection" content="telephone=no" />
      <meta name="viewport" content="width=device-width" />
-     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+     <link href="<?php echo base_url().$this->config->item('asset_css');?>css.css" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().$this->config->item('asset_css');?>bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().$this->config->item('asset_css');?>style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url().$this->config->item('asset_css');?>font-awesome.min.css">
     <title><?php echo $title;?></title>
   </head>
-  <body>
+  <body ng-app="kirapp">

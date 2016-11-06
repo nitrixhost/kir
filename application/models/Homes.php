@@ -12,7 +12,23 @@ class Homes extends CI_Model {
   	function __construct()
   	{
      	parent::__construct();
-     	$this->_tbl = 'tbkendaraan';
+
+      //prefix
+      $pref = 'tbl_';
+     	$this->_kendaraan = $pref.'kendaraan';
+      //load of array table
+      $this->_periksa = 'periksa';
+      $this->_tblsuspendi = $pref.'as_suspendi';
+      $this->_ban = $pref.'ban';
+      $this->_hasiluji = $pref.'hasil_uji';
+      $this->_lain = $pref.'lainlain';
+      $this->_mesin = $pref.'mesin';
+      $this->_peralatan = $pref.'peralatan';
+      $this->_peralatan2 = $pref.'peralatan_dua';
+      $this->_rangka = $pref.'rangka';
+      $this->_ruanggas = $pref.'ruang_gas';
+      $this->_sistemkem = $pref.'sistem_kemudi';
+      $this->_sistemkem2 = $pref.'sistem_kemudi_dua';
   	}
 
 
@@ -20,18 +36,27 @@ class Homes extends CI_Model {
   	{
   		$this->db->select('Tahun_pembuatan');
   		$this->db->distinct();
-  		$query = $this->db->get($this->_tbl);
+  		$query = $this->db->get($this->_kendaraan);
   		return $query->result();
   	}
 
   	public function hitungMobThPem($tahun)
   	{
-  		$query = $this->db->get_where($this->_tbl,array('Tahun_pembuatan'=>$tahun));
+  		$query = $this->db->get_where($this->_kendaraan,array('Tahun_pembuatan'=>$tahun));
   		return count($query->result());
   	}
 
 
-
+    /* cari data berdasarkan nouji kendaraan */
+    public function searchNoUji($no)
+    {
+        $this->db->select('*');
+        $this->db->from($this->_periksa);
+        $this->db->join($this->_kendaraan,'tbl_kendaraan.id = periksa.id_kendaraan');
+        $this->db->where('no_uji',$no);
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 
 

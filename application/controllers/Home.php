@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 		//load helper
 		$this->load->helper(array('form', 'url'));
 		//load library
-		$this->load->library(array('form_validation'));
+		$this->load->library(array('form_validation','uji'));
 		//load model
 		$this->load->model(array('homes'));
 		//load language
@@ -23,6 +23,7 @@ class Home extends CI_Controller {
 		$this->_contan = $this->config->item('template_dir').'pages/';
 	}
 
+	/** halaman index ***/
 	public function index()
 	{
 		$data['title'] = $this->lang->line('title_home');
@@ -30,6 +31,7 @@ class Home extends CI_Controller {
 		$this->load->view($this->_template,$data);
 	}
 
+	/** fungsi mengambil data chart */
 	public function datachart()
 	{
 		//dapatkan legend y axis
@@ -42,5 +44,24 @@ class Home extends CI_Controller {
 		}
 		$k = array("labels"=> $da,"data"=>$das);
 		echo json_encode($k);
+	}
+
+	/* ajax post buat blanko*/
+	public function searchBlanko()
+	{
+		//tampung semua postingan
+		$post = $this->input->post();
+		//jika kosong
+		if(empty($post))
+			$this->session->set_flashdata('error',$this->lang->line('error_nodata'));
+			//redirect('home');
+		//temukan semua data
+		$data['datas'] = $this->uji->cekUji($post['nouji']);
+		if($data['datas'] == null)
+			$this->session->set_flashdata('error',$this->lang->line('error_noquery'));
+			//redirect('home');
+		$data['page'] = $this->_contan.'blanko';
+		$data['title'] = $this->lang->line('title_print_blanko');
+		$this->load->view($this->_template,$data);
 	}
 }
