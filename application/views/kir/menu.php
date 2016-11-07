@@ -23,15 +23,15 @@
         						<li><a href="#"><i class="fa fa-area-chart" aria-hidden="true"></i>
 
  <?php echo $this->lang->line('menu_report');?> </a></li>
-        						<li><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i>
+        						<li><a href="<?php echo site_url('home/notifikasi');?>"><i class="fa fa-bell-o" aria-hidden="true"></i>
  <?php echo $this->lang->line('menu_notifikasi');?></a></li>  
                     <li><a href="#" data-toggle="modal" data-target="#datasearch" data-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i> <?php echo $this->lang->line('menu_blanko');?></a>
 							   </ul>
                  <ul class="nav navbar-nav navbar-right">
-                 <form class="navbar-form navbar-right" role="search">
+                 <form class="navbar-form navbar-right" role="search" action="<?php echo site_url('home/search');?>" method="post">
                       <div class="form-group">
                         <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" placeholder="<?php echo $this->lang->line('label_search');?>">
+                        <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('label_search');?>">
                         <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                     </div>
                       </div>

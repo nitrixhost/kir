@@ -13,6 +13,7 @@
         <?php } ?>
 </script>
 
+<?php if(current_url() == base_url() or current_url() == site_url('home/index') or current_url() == site_url('home')){?>
 	<script type="text/javascript">
 		function drawLine(){
     	//get json data
@@ -43,6 +44,7 @@
     
 drawLine();
 	</script>
+<?php }?>
   <script type="text/javascript">
  <?php if($this->session->flashdata('error')){?>
       $.notify("<?php echo $this->session->flashdata('error');?>","error")

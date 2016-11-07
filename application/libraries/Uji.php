@@ -34,6 +34,26 @@ class Uji {
     	return $data;
     }
 
+    /**
+    * Fungsi untuk mengecek tanggal perbaikan
+    * array
+    */
+    public function cekExpired()
+    {
+        $data = $this->CI->homes->cekKadaluarsa();
+        return $data;
+    }
+
+    /**
+    * Fungsi untuk mengecek apakah hari ini ada yang expired
+    * array
+    */
+    public function cekExpiredNow()
+    {
+        $data = $this->CI->homes->cekKadaluarsaNow();
+        return $data;
+    }
+
 
 
 }

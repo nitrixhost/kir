@@ -58,6 +58,34 @@ class Homes extends CI_Model {
         return $query->result();
     }
 
+    /* cek kadaluarsa */
+    public function cekKadaluarsa()
+    {
+        $querys = "select * from tbl_hasil_uji where untuk_di_perbaiki_sampai_dengan_tanggal = DATE(NOW() + INTERVAL 3 DAY)";
+        $query = $this->db->query($querys);
+        return $query->result();
+    }
+
+    /* cek kadaluarsa sekarang */
+    public function cekKadaluarsaNow()
+    {
+       $querys = "select * from tbl_hasil_uji where untuk_di_perbaiki_sampai_dengan_tanggal = DATE(NOW() + INTERVAL 1 DAY)";
+       $query = $this->db->query($querys);
+       return $query->result();
+    }
+
+    /* cek hasil search */
+    public function searchData($search)
+    {
+        $this->db->from($this->_periksa);
+        $this->db->like('no_uji',$search);
+        $this->db->or_like('tanggal_pemeriksaan',$search);
+        $this->db->or_like('pelat_nomor',$search);
+        
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 
 
 

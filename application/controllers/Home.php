@@ -46,6 +46,22 @@ class Home extends CI_Controller {
 		echo json_encode($k);
 	}
 
+	/* halaman notifikasi */
+	public function notifikasi()
+	{
+		$data['today'] = $this->uji->cekExpiredNow();
+		//apakah today ada 
+		if($data['today'] == null)
+			$this->session->set_flashdata('error',$this->lang->line('error_noexpired1'));
+		$data['tiga'] = $this->uji->cekExpired();
+		//apakah tigahari kedepan ada
+		if($data['tiga'] == null)
+			$this->session->set_flashdata('error',$this->lang->line('error_noexpired3'));
+		$data['title'] = $this->lang->line('title_notifikasi');
+		$data['page'] = $this->_contan.'notifikasi';
+		$this->load->view($this->_template,$data);
+	}
+
 	/* ajax post buat blanko*/
 	public function searchBlanko()
 	{
@@ -62,6 +78,22 @@ class Home extends CI_Controller {
 			//redirect('home');
 		$data['page'] = $this->_contan.'blanko';
 		$data['title'] = $this->lang->line('title_print_blanko');
+		$this->load->view($this->_template,$data);
+	}
+
+	/* search apa saja */
+	public function search()
+	{
+		//dapatkan hasil post
+		$post = $this->input->post();
+		//jika kosong
+		if(empty($post['search']))
+			$this->session->set_flashdata('error',$this->lang->line('error_nosearch'));
+			//redirect('home');
+		//search
+		$data['data'] = $this->homes->searchData($post['search']);
+		$data['title'] = $this->lang->line('title_search');
+		$data['page'] = $this->_contan.'search';
 		$this->load->view($this->_template,$data);
 	}
 }
