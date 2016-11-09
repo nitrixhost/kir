@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="list">
 	<div class="row">
 		<div class="col-md-4">
 		<?php foreach($today as $k){?>
@@ -24,3 +24,4 @@
 		</div>
 	</div>
 </div>
+<div id="lista"></div>

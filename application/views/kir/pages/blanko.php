@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="list">
 	<div class="row">
 		<div class="col-md-2"><img src="<?php echo base_url().$this->config->item('asset_image');?>logo.png" class="img-responsive"></div>
 		<div class="col-md-8">
@@ -45,3 +45,4 @@
 	</div>
 	<?php }?>
 </div>
+<div id="lista"></div>

@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 		//load helper
 		$this->load->helper(array('form', 'url'));
 		//load library
-		$this->load->library(array('form_validation','uji'));
+		$this->load->library(array('form_validation','uji','session'));
 		//load model
 		$this->load->model(array('homes'));
 		//load language
@@ -70,12 +70,12 @@ class Home extends CI_Controller {
 		//jika kosong
 		if(empty($post))
 			$this->session->set_flashdata('error',$this->lang->line('error_nodata'));
-			//redirect('home');
+			redirect('home');
 		//temukan semua data
 		$data['datas'] = $this->uji->cekUji($post['nouji']);
 		if($data['datas'] == null)
 			$this->session->set_flashdata('error',$this->lang->line('error_noquery'));
-			//redirect('home');
+			redirect('home');
 		$data['page'] = $this->_contan.'blanko';
 		$data['title'] = $this->lang->line('title_print_blanko');
 		$this->load->view($this->_template,$data);
@@ -87,13 +87,38 @@ class Home extends CI_Controller {
 		//dapatkan hasil post
 		$post = $this->input->post();
 		//jika kosong
-		if(empty($post['search']))
-			$this->session->set_flashdata('error',$this->lang->line('error_nosearch'));
+		if(empty($post['search'])){
+			echo $this->lang->line('error_nosearch');
 			//redirect('home');
+		}else{
 		//search
-		$data['data'] = $this->homes->searchData($post['search']);
-		$data['title'] = $this->lang->line('title_search');
-		$data['page'] = $this->_contan.'search';
-		$this->load->view($this->_template,$data);
+		$datax = $this->homes->searchData($post['search']);
+		//jika data null
+		if($datax == null){
+			echo '<p>'.$this->lang->line('error_searchresult').'</p>';
+			echo '<a href='.site_url('home/searchSpesifik').' class="btn btn-primary">'.$this->lang->line('button_spesifik').'</a>';
+		}else{
+
+		echo '<div class="container">';
+		echo '<div class="row">';
+		echo '<div class="col-md-12">';
+		echo '<h2>'.$this->lang->line('success_searchfound').'</h2>';
+		echo '<table class="table table-striped table-hover table-condensed mar-top20">';
+			echo '<thead><tr><th>'.$this->lang->line('label_nouji').'</th><th>'.$this->lang->line('label_tanggal_pemeriksaan').'</th><th>'.$this->lang->line('label_action').'</tr></thead><tbody>';
+		foreach($datax as $k){
+			echo '<tr>';
+			echo '<td>'.$k->no_uji.'</td>';
+			echo '<td>'.$k->tanggal_pemeriksaan.'</td>';
+			echo '<td><a href="'.site_url('home/searchBlanko/'.$k->id_uji).'" class="btn btn-primary">'.$this->lang->line('button_detail').'</a></td>';
+			echo '</tr>';
+		}
+		echo '</tbody>';
+		echo '</table>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+
+		}
+		}
 	}
 }

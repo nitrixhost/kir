@@ -45,12 +45,19 @@
 drawLine();
 	</script>
 <?php }?>
-  <script type="text/javascript">
- <?php if($this->session->flashdata('error')){?>
-      $.notify("<?php echo $this->session->flashdata('error');?>","error")
-    <?php }elseif($this->session->flashdata('success')){?>
-            $.notify("<?php echo $this->session->flashdata('success');?>","success");
-        <?php } ?>
+<script type="text/javascript">
+   $("#search").keyup(function(){
+       $.ajax({
+          type: "POST",
+           url: "<?php echo site_url('home/search');?>",
+           data: {'search': $('#search').val()},
+           success: function(response){
+               $("#lista").html(response);
+               $("#list").hide();
+               $("#lista").show();
+           }
+       });
+    });
 </script>
   <script type="text/javascript">
   $('#datasearch').on('show.bs.modal', function (event) {

@@ -14,7 +14,7 @@
         						<span class="icon-bar"></span>
         						<span class="icon-bar"></span>
       						</button>
-      						<a class="navbar-brand" href="#"><img src="<?php echo base_url().$this->config->item('asset_image');?>logo.png" alt="uji kir" class="img-responsive"></a>
+      						<a class="navbar-brand" href="<?php echo base_url();?>"><img src="<?php echo base_url().$this->config->item('asset_image');?>logo.png" alt="uji kir" class="img-responsive"></a>
     					</div>
 
     					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,10 +28,10 @@
                     <li><a href="#" data-toggle="modal" data-target="#datasearch" data-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i> <?php echo $this->lang->line('menu_blanko');?></a>
 							   </ul>
                  <ul class="nav navbar-nav navbar-right">
-                 <form class="navbar-form navbar-right" role="search" action="<?php echo site_url('home/search');?>" method="post">
+                 <form class="navbar-form navbar-right" role="search">
                       <div class="form-group">
                         <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" name="search" placeholder="<?php echo $this->lang->line('label_search');?>">
+                        <input type="text" class="form-control" name="search" id="search" placeholder="<?php echo $this->lang->line('label_search');?>">
                         <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                     </div>
                       </div>

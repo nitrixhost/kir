@@ -9,7 +9,7 @@ $lang['title_notifikasi']	= 'Notifikasi';
 $lang['title_search']		= 'Search';
 
 //success 
-$lang['success_searchfound']	= 'Akhirnya ketemu juga..';
+$lang['success_searchfound']	= 'Hasil Search Result';
 
 //error
 $lang['error_nodata']		= 'Mohon isi data dengan lengkap';
@@ -17,6 +17,7 @@ $lang['error_noquery']		= 'Mohon maaf, tidak ada data';
 $lang['error_noexpired1']	= 'Mohon maaf, untuk saat ini tidak ada yang expired dalam 1 hari kedepan';
 $lang['error_noexpired3']	= 'Mohon maaf, untuk saat ini tidak ada yang expired dalam 3 hari kedepan';
 $lang['error_nosearch']		= 'Mohon isi searchnya';
+$lang['error_searchresult']	= 'Mohon maaf, tidak ada data yang kami temukan';
 
 //menu
 $lang['menu_report']					= 'Report';
@@ -44,12 +45,16 @@ $lang['label_merek']					= 'Merek/Type';
 $lang['label_tahunpembuatan']			= 'Tahun Pembuatan';
 $lang['label_nomesin']					= 'No Mesin';
 $lang['label_norangka']					= 'No Rangka';
+$lang['label_tanggal_pemeriksaan']		= 'Tanggal Pemeriksaan';
+$lang['label_action']					= 'Action';
 
 //table
 $lang['th_peralatan']					= '1. Peralatan';
 
 //button
 $lang['button_submit']					= 'Submit';
+$lang['button_detail']					= 'Lihat Detail';
+$lang['button_spesifik']				= 'Cari Spesifik';
 
 //heading chart
 $lang['line_heading_th_pembuatan']		= 'Data Mobil Berdasarkan tahun pembuatan';
