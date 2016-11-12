@@ -20,9 +20,9 @@
     					<!-- Collect the nav links, forms, and other content for toggling -->
     					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       						<ul class="nav navbar-nav">
-        						<li><a href="#"><i class="fa fa-area-chart" aria-hidden="true"></i>
+        						<!--<li><a href="#"><i class="fa fa-area-chart" aria-hidden="true"></i>
 
- <?php echo $this->lang->line('menu_report');?> </a></li>
+ <?php echo $this->lang->line('menu_report');?> </a></li>-->
         						<li><a href="<?php echo site_url('home/notifikasi');?>"><i class="fa fa-bell-o" aria-hidden="true"></i>
  <?php echo $this->lang->line('menu_notifikasi');?></a></li>  
                     <li><a href="#" data-toggle="modal" data-target="#datasearch" data-whatever="@mdo"><i class="fa fa-plus" aria-hidden="true"></i> <?php echo $this->lang->line('menu_blanko');?></a>

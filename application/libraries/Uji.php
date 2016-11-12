@@ -34,6 +34,16 @@ class Uji {
     	return $data;
     }
 
+    /** 
+    * Fungsi untuk mengecek uji berdasarkan id uji
+    * array
+    */
+    public function cekIdUji($uji)
+    {
+    	$data = $this->CI->homes->searchIdUji($uji);
+    	return $data;
+    }
+
     /**
     * Fungsi untuk mengecek tanggal perbaikan
     * array

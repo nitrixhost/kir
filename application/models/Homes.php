@@ -53,7 +53,22 @@ class Homes extends CI_Model {
         $this->db->select('*');
         $this->db->from($this->_periksa);
         $this->db->join($this->_kendaraan,'tbl_kendaraan.id = periksa.id_kendaraan');
+        $this->db->join($this->_peralatan,'tbl_peralatan.id_uji = periksa.id_uji');
+        $this->db->join($this->_peralatan2,'tbl_peralatan_dua.id_uji = periksa.id_uji');
+        $this->db->join($this->_sistemkem,'tbl_sistem_kemudi.id_uji = periksa.id_uji');
+        $this->db->join($this->_tblsuspendi,'tbl_as_suspendi.id_uji = periksa.id_uji');
         $this->db->where('no_uji',$no);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    /* cari berdasarkan id uji kendaraan */
+    public function searchIdUji($no)
+    {
+        $this->db->select('*');
+        $this->db->from($this->_periksa);
+        $this->db->join($this->_kendaraan,'tbl_kendaraan.id = periksa.id_kendaraan');
+        $this->db->where('id_uji',$no);
         $query = $this->db->get();
         return $query->result();
     }

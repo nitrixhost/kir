@@ -67,15 +67,19 @@ class Home extends CI_Controller {
 	{
 		//tampung semua postingan
 		$post = $this->input->post();
+		$uri = $this->uri->segment('3');
 		//jika kosong
-		if(empty($post))
+		if(empty($post) and empty($uri))
 			$this->session->set_flashdata('error',$this->lang->line('error_nodata'));
-			redirect('home');
 		//temukan semua data
-		$data['datas'] = $this->uji->cekUji($post['nouji']);
+		//jik tidak ada post
+		if($uri == true){
+			$data['datas'] = $this->uji->cekIdUji($uri);
+		}else{
+			$data['datas'] = $this->uji->cekUji($post['nouji']);
+		}
 		if($data['datas'] == null)
 			$this->session->set_flashdata('error',$this->lang->line('error_noquery'));
-			redirect('home');
 		$data['page'] = $this->_contan.'blanko';
 		$data['title'] = $this->lang->line('title_print_blanko');
 		$this->load->view($this->_template,$data);
