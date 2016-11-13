@@ -74,7 +74,7 @@ class Home extends CI_Controller {
 		//temukan semua data
 		//jik tidak ada post
 		if($uri == true){
-			$data['datas'] = $this->uji->cekIdUji($uri);
+			$data['datas'] = $this->uji->cekUji($uri);
 		}else{
 			$data['datas'] = $this->uji->cekUji($post['nouji']);
 		}
@@ -113,7 +113,7 @@ class Home extends CI_Controller {
 			echo '<tr>';
 			echo '<td>'.$k->no_uji.'</td>';
 			echo '<td>'.$k->tanggal_pemeriksaan.'</td>';
-			echo '<td><a href="'.site_url('home/searchBlanko/'.$k->id_uji).'" class="btn btn-primary">'.$this->lang->line('button_detail').'</a></td>';
+			echo '<td><a href="'.site_url('home/searchBlanko/'.$k->no_uji).'" class="btn btn-primary">'.$this->lang->line('button_detail').'</a></td>';
 			echo '</tr>';
 		}
 		echo '</tbody>';

@@ -83,8 +83,8 @@
 								<dd class="classk"><?php echo $this->lang->line('td_speedometer');?></dd>
 								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_113');?> <input type="checkbox" name="113" <?php if($r->perlengkapan == 1){echo "checked"; }else{}?>></dt>
 								<dd class="classk"><?php echo $this->lang->line('td_perlengkapan');?></dd>
-								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
-								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->peralatan_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->peralatan_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
 							</dl>
 						</td>
 					</tr>
@@ -119,8 +119,8 @@
 								<dd class="classk"><?php echo $this->lang->line('td_reflektor_merah');?></dd>
 								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_214');?> <input type="checkbox" name="214" <?php if($r->lampu_tambahan_lain == 1){echo "checked"; }else{}?>></dt>
 								<dd class="classk"><?php echo $this->lang->line('td_lamppu_tambahan_lain');?></dd>
-								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
-								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->peralatan_dua_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->peralatan_dua_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
 							</dl>
 						</td>
 					</tr>
@@ -152,8 +152,8 @@
 								<dd class="classk"><?php echo $this->lang->line('td_power_stering');?></dd>
 								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_308');?> <input type="checkbox" name="308" <?php if($r->side_slip == 1){echo "checked"; }else{}?>></dt>
 								<dd class="classk"><?php echo $this->lang->line('td_slide_slip');?></dd>
-								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
-								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->sistem_kemudi_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->sistem_kemudi_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
 							</dl>
 						</td>
 					</tr>
@@ -175,54 +175,194 @@
 								<dd class="classk"><?php echo $this->lang->line('td_pegas');?></dd>
 								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_406');?> <input type="checkbox" name="406" <?php if($r->bantalan_roda == 1){echo "checked"; }else{}?>></dt>
 								<dd class="classk"><?php echo $this->lang->line('td_bantalan_roda');?></dd>
-								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
-								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->as_suspendi_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->as_suspendi_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th class="upper"><?php echo $this->lang->line('th_ban');?></th>
+					</tr>
+					<tr>
+						<td>
+							<dl class="dl-horizontal">
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_501');?> <input type="checkbox" name="501" <?php if($r->ukuran_dari_jenis_ban == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_ukuran_dan_jenis_ban');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_402');?> <input type="checkbox" name="502" <?php if($r->keadaan_ban == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_keadaan_ban');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_503');?> <input type="checkbox" name="503" <?php if($r->kedalaman_kembang_ban == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_kedalaman_kembang_ban');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_504');?> <input type="checkbox" name="504" <?php if($r->ukuran_dan_jenis_pelek == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_ukuran_dan_jenis_pelek');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_505');?> <input type="checkbox" name="505" <?php if($r->keadaan_pelek == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_keadaan_pelek');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_506');?> <input type="checkbox" name="506" <?php if($r->pengukuran_ban_pelek == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_pengukuran_ban');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->ban_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->ban_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+							</dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<tr>
+						<th class="upper"><?php echo $this->lang->line('th_rangka_body');?></th>
+					</tr>
+					<tr>
+						<td>
+							<dl class="dl-horizontal">
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_601');?> <input type="checkbox" name="601" <?php if($r->rangka_roda_kemudi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_roda_kemudi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_602');?> <input type="checkbox" name="602" <?php if($r->speling_roda_kemudi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_spelling');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_603');?> <input type="checkbox" name="603" <?php if($r->rangka_batang_kemudi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_batang_kemudi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_604');?> <input type="checkbox" name="604" <?php if($r->rangka_roda_gigi_kemudi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_roda_gigi_kemudi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_605');?> <input type="checkbox" name="605" <?php if($r->rangka_sambungan_kemudi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_sambungan_kemudi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_606');?> <input type="checkbox" name="606" <?php if($r->penyambung_sendi_peluru == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_penyambung_sendi_peluru');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_607');?> <input type="checkbox" name="607" <?php if($r->rangka_power_stering == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_power_stering');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_608');?> <input type="checkbox" name="608" <?php if($r->slide_slip == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_slide_slip');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->rangka_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->rangka_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo $this->lang->line('th_sistem_kemudi_2');?></th>
+					</tr>
+					<tr>
+						<td>
+							<dl class="dl-horizontal">
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_701');?> <input type="checkbox" name="701" <?php if($r->pedal_rem == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_pedal_rem');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_702');?> <input type="checkbox" name="702" <?php if($r->speling_rem == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_speling_rem');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_703');?> <input type="checkbox" name="703" <?php if($r->lampu_dekat == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_dekat');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_704');?> <input type="checkbox" name="704" <?php if($r->sistem_kemudi_dua_arah_lampu == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_arah_lampu');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_705');?> <input type="checkbox" name="705" <?php if($r->sistem_kemudi_dua_lampu_kabut == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_kabut');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_706');?> <input type="checkbox" name="706" <?php if($r->sistem_kemudi_dua_lampu_posisi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_posisi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_707');?> <input type="checkbox" name="707" <?php if($r->sistem_kemudi_dua_lampu_belakang == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_belakang');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_708');?> <input type="checkbox" name="708" <?php if($r->sistem_kemudi_dua_lampu_rem == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_rem');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_71');?> <input type="checkbox" name="71" <?php if($r->sistem_kemudi_dua_lampu_pelat_nomor == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_pelat_nomor');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_711');?> <input type="checkbox" name="711" <?php if($r->sistem_kemudi_dua_lampu_mundur == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_mundur');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_712');?> <input type="checkbox" name="712" <?php if($r->lampu_kabut_bel == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_kabut_belakang');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_72');?> <input type="checkbox" name="72" <?php if($r->lampu_arah_per == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_arah_peringatan');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_721');?> <input type="checkbox" name="721" <?php if($r->sistem_kemudi_dua_reflektor_merah == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_reflektor_merah');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_722');?> <input type="checkbox" name="722" <?php if($r->lampu_tambahan == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lamppu_tambahan_lain');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_723');?> <input type="checkbox" name="723" <?php if($r->lampu_jauh == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_jauh');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_724');?> <input type="checkbox" name="724" <?php if($r->sistem_kemudi_dua_tambahan_lampu_jauh == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_tambahan_lampu_jauh');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_725');?> <input type="checkbox" name="725" <?php if($r->lampu_dekat == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_dekat');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_73');?> <input type="checkbox" name="73" <?php if($r->arah_lampu_dua == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_arah_lampu');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_731');?> <input type="checkbox" name="731" <?php if($r->lampu_kabut_dua == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_kabut');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_732');?> <input type="checkbox" name="732" <?php if($r->lampu_posisi_dua == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_posisi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_733');?> <input type="checkbox" name="733" <?php if($r->lampu_belakang_dua == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu_belakang');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_734');?> <input type="checkbox" name="734" <?php if($r->lampu == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_lampu');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->sistem_kemudi_dua_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->sistem_kemudi_dua_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+							</dl>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="table-responsive table-bordered">
+				<table class="table">
+					<tr>
+						<th class="upper"><?php echo $this->lang->line('th_sistem_ruang_buang');?></th>
+					</tr>
+					<tr>
+						<td>
+							<dl class="dl-horizontal">
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_741');?> <input type="checkbox" name="741" <?php if($r->fungsi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_fungsi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_75');?> <input type="checkbox" name="75" <?php if($r->efesiensi_rem == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_efisiensi_rem');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_751');?> <input type="checkbox" name="751" <?php if($r->rem_utama == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_rem_utama');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_752');?> <input type="checkbox" name="752" <?php if($r->perbedaan_depan == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_perbedaan_depan');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_753');?> <input type="checkbox" name="753" <?php if($r->perbedaan_belakang == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_perbedaan_belakang');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_754');?> <input type="checkbox" name="754" <?php if($r->rem_parkir == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_rem_parkir');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->ruang_gas_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->ruang_gas_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo $this->lang->line('th_mesin_transmisi');?></th>
+					</tr>
+					<tr>
+						<td>
+							<dl class="dl-horizontal">
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_801');?> <input type="checkbox" name="801" <?php if($r->dudukan_mesin == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_dudukan_mesin');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_802');?> <input type="checkbox" name="802" <?php if($r->kondisi_mesin == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_kondisi_mesin');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_803');?> <input type="checkbox" name="803" <?php if($r->transmisi == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_transmisi');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_804');?> <input type="checkbox" name="804" <?php if($r->sistem_gas_buang == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_sistim_gas_buang');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_805');?> <input type="checkbox" name="805" <?php if($r->emisi_asap == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_emisi_asap');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_806');?> <input type="checkbox" name="806" <?php if($r->emisi_co == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_emisi_co');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->mesin_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->mesin_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+							</dl>
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo $this->lang->line('th_lain_lain');?></th>
+					</tr>
+					<tr>
+						<td>
+							<dl class="dl-horizontal">
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_805');?> <input type="checkbox" name="805" <?php if($r->lainlain_emisi_asap == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_emisi_asap');?></dd>
+								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_806');?> <input type="checkbox" name="806" <?php if($r->lainlain_emisi_co == 1){echo "checked"; }else{}?>></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_emisi_co');?></dd>
+								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->lainlain_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->lainlain_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
 							</dl>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<dl class="dl-horizontal">
-								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_401');?> <input type="checkbox" name="401" <?php if($r->suspensi_roda_depan == 1){echo "checked"; }else{}?>></dt>
-								<dd class="classk"><?php echo $this->lang->line('td_suspensi_roda_depan');?></dd>
-								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_402');?> <input type="checkbox" name="402" <?php if($r->suspensi_roda_belakang == 1){echo "checked"; }else{}?>></dt>
-								<dd class="classk"><?php echo $this->lang->line('td_suspnesi_roda_belakang');?></dd>
-								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_403');?> <input type="checkbox" name="403" <?php if($r->sumbu == 1){echo "checked"; }else{}?>></dt>
-								<dd class="classk"><?php echo $this->lang->line('td_sumbu');?></dd>
-								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_404');?> <input type="checkbox" name="404" <?php if($r->pemasangan_sumbu == 1){echo "checked"; }else{}?>></dt>
-								<dd class="classk"><?php echo $this->lang->line('td_pemasangan_sumbu');?></dd>
-								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_405');?> <input type="checkbox" name="405" <?php if($r->pegas == 1){echo "checked"; }else{}?>></dt>
-								<dd class="classk"><?php echo $this->lang->line('td_pegas');?></dd>
-								<dt class="list-dt table-dt"><?php echo $this->lang->line('td_406');?> <input type="checkbox" name="406" <?php if($r->bantalan_roda == 1){echo "checked"; }else{}?>></dt>
-								<dd class="classk"><?php echo $this->lang->line('td_bantalan_roda');?></dd>
-								<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
-								<dd class="classk"><input type="checkbox" name="zero" <?php if($r->gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
 							</dl>
 						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="table-responsive">
-				<table class="table">
-					<tr>
-						<th class="upper"><?php echo $this->lang->line('th_rangka_body');?></th>
-					</tr>
-					<tr>
-						<td></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="table-responsive">
-				<table class="table">
-					<tr>
-						<th class="upper"><?php echo $this->lang->line('th_sistem_ruang_buang');?></th>
-					</tr>
-					<tr>
-						<td></td>
 					</tr>
 				</table>
 			</div>

@@ -352,8 +352,8 @@ CREATE TABLE `tbl_as_suspendi` (
   `pemasangan_sumbu` enum('0','1') DEFAULT '0',
   `pegas` enum('0','1') DEFAULT '0',
   `bantalan_roda` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `as_suspendi_lulus` enum('0','1') DEFAULT '0',
+  `as_suspendi_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_as`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -384,8 +384,8 @@ CREATE TABLE `tbl_ban` (
   `ukuran_dan_jenis_pelek` enum('0','1') DEFAULT '0',
   `keadaan_pelek` enum('0','1') DEFAULT '0',
   `pengukuran_ban_pelek` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `ban_lulus` enum('0','1') DEFAULT '0',
+  `ban_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_ban`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -436,8 +436,8 @@ CREATE TABLE `tbl_hasil_uji` (
   `id_hasil` int(6) NOT NULL AUTO_INCREMENT,
   `id_uji` int(6) NOT NULL,
   `catatan` varchar(200) DEFAULT NULL,
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `hasil_uji_lulus` enum('0','1') DEFAULT '0',
+  `hasil_uji_gagal` enum('0','1') DEFAULT '0',
   `persetujuan_dari` varchar(100) DEFAULT NULL,
   `nomor_persetujuan` varchar(100) DEFAULT NULL,
   `tanggal_persetujuan` date DEFAULT NULL,
@@ -498,10 +498,10 @@ DROP TABLE IF EXISTS `tbl_lainlain`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_lainlain` (
   `id_lainlain` int(6) NOT NULL AUTO_INCREMENT,
-  `emisi_asap` enum('0','1') DEFAULT '0',
-  `emisi_co` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `lainlain_emisi_asap` enum('0','1') DEFAULT '0',
+  `lainlain_emisi_co` enum('0','1') DEFAULT '0',
+  `lainlain_lulus` enum('0','1') DEFAULT '0',
+  `lainlain_gagal` enum('0','1') DEFAULT '0',
   `id_uji` int(6) NOT NULL,
   PRIMARY KEY (`id_lainlain`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -529,11 +529,12 @@ CREATE TABLE `tbl_mesin` (
   `id_uji` int(6) NOT NULL,
   `dudukan_mesin` enum('0','1') DEFAULT '0',
   `kondisi_mesin` enum('0','1') DEFAULT '0',
+  `transmisi` enum('0','1') NOT NULL,
   `sistem_gas_buang` enum('0','1') DEFAULT '0',
   `emisi_asap` enum('0','1') DEFAULT '0',
   `emisi_co` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `mesin_lulus` enum('0','1') DEFAULT '0',
+  `mesin_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_mesin`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -544,7 +545,7 @@ CREATE TABLE `tbl_mesin` (
 
 LOCK TABLES `tbl_mesin` WRITE;
 /*!40000 ALTER TABLE `tbl_mesin` DISABLE KEYS */;
-INSERT INTO `tbl_mesin` VALUES (1,2,'1','1','1','0','0','1','0'),(2,3,'1','1','0','0','0','0','1');
+INSERT INTO `tbl_mesin` VALUES (1,2,'1','1','0','1','0','0','1','0'),(2,3,'1','1','0','0','0','0','0','1');
 /*!40000 ALTER TABLE `tbl_mesin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -571,8 +572,8 @@ CREATE TABLE `tbl_peralatan` (
   `lampu_indikasi` enum('0','1') DEFAULT '0',
   `spedometer` enum('0','1') DEFAULT '0',
   `perlengkapan` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `peralatan_lulus` enum('0','1') DEFAULT '0',
+  `peralatan_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_peralatan`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -611,8 +612,8 @@ CREATE TABLE `tbl_peralatan_dua` (
   `lampu_arah_peringatan` enum('0','1') DEFAULT '0',
   `reflektor_merah` enum('0','1') DEFAULT '0',
   `lampu_tambahan_lain` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `peralatan_dua_lulus` enum('0','1') DEFAULT '0',
+  `peralatan_dua_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_peralatan_2`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -661,16 +662,16 @@ DROP TABLE IF EXISTS `tbl_rangka`;
 CREATE TABLE `tbl_rangka` (
   `id_rangka` int(6) NOT NULL AUTO_INCREMENT,
   `id_uji` int(6) NOT NULL,
-  `roda_kemudi` enum('0','1') DEFAULT '0',
+  `rangka_roda_kemudi` enum('0','1') DEFAULT '0',
   `speling_roda_kemudi` enum('0','1') DEFAULT '0',
-  `batang_kemudi` enum('0','1') DEFAULT '0',
-  `roda_gigi_kemudi` enum('0','1') DEFAULT '0',
-  `sambungan_kemudi` enum('0','1') DEFAULT '0',
+  `rangka_batang_kemudi` enum('0','1') DEFAULT '0',
+  `rangka_roda_gigi_kemudi` enum('0','1') DEFAULT '0',
+  `rangka_sambungan_kemudi` enum('0','1') DEFAULT '0',
   `penyambung_sendi_peluru` enum('0','1') DEFAULT '0',
-  `power_stering` enum('0','1') DEFAULT '0',
+  `rangka_power_stering` enum('0','1') DEFAULT '0',
   `slide_slip` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `rangka_lulus` enum('0','1') DEFAULT '0',
+  `rangka_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_rangka`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -701,8 +702,8 @@ CREATE TABLE `tbl_ruang_gas` (
   `perbedaan_depan` enum('0','1') DEFAULT '0',
   `perbedaan_belakang` enum('0','1') DEFAULT '0',
   `rem_parkir` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `ruang_gas_lulus` enum('0','1') DEFAULT '0',
+  `ruang_gas_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_sistem_ruang`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -735,8 +736,8 @@ CREATE TABLE `tbl_sistem_kemudi` (
   `penyambung_sandi` enum('0','1') DEFAULT '0',
   `power_stering` enum('0','1') DEFAULT '0',
   `side_slip` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_lulus` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_sistem`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -764,25 +765,26 @@ CREATE TABLE `tbl_sistem_kemudi_dua` (
   `pedal_rem` enum('0','1') DEFAULT '0',
   `speling_rem` enum('0','1') DEFAULT '0',
   `lampu_dekat` enum('0','1') DEFAULT '0',
-  `arah_lampu` enum('0','1') DEFAULT '0',
-  `lampu_kabut` enum('0','1') DEFAULT '0',
-  `lampu_posisi` enum('0','1') DEFAULT '0',
-  `lampu_belakang` enum('0','1') DEFAULT '0',
-  `lampu_rem` enum('0','1') DEFAULT '0',
-  `lampu_pelat_nomor` enum('0','1') DEFAULT '0',
-  `lampu_mundur` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_arah_lampu` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_lampu_kabut` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_lampu_posisi` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_lampu_belakang` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_lampu_rem` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_lampu_pelat_nomor` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_lampu_mundur` enum('0','1') DEFAULT '0',
   `lampu_kabut_bel` enum('0','1') DEFAULT '0',
   `lampu_arah_per` enum('0','1') DEFAULT '0',
-  `reflektor_merah` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_reflektor_merah` enum('0','1') DEFAULT '0',
   `lampu_tambahan` enum('0','1') DEFAULT '0',
   `lampu_jauh` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_tambahan_lampu_jauh` enum('0','1') NOT NULL,
   `arah_lampu_dua` enum('0','1') DEFAULT '0',
   `lampu_kabut_dua` enum('0','1') DEFAULT '0',
   `lampu_posisi_dua` enum('0','1') DEFAULT '0',
   `lampu_belakang_dua` enum('0','1') DEFAULT '0',
   `lampu` enum('0','1') DEFAULT '0',
-  `lulus` enum('0','1') DEFAULT '0',
-  `gagal` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_lulus` enum('0','1') DEFAULT '0',
+  `sistem_kemudi_dua_gagal` enum('0','1') DEFAULT '0',
   PRIMARY KEY (`id_sistem_dua`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -793,7 +795,7 @@ CREATE TABLE `tbl_sistem_kemudi_dua` (
 
 LOCK TABLES `tbl_sistem_kemudi_dua` WRITE;
 /*!40000 ALTER TABLE `tbl_sistem_kemudi_dua` DISABLE KEYS */;
-INSERT INTO `tbl_sistem_kemudi_dua` VALUES (1,2,'1','1','1','1','1','0','0','0','1','0','1','1','0','0','0','0','0','0','0','0','1','0'),(2,3,'0','1','1','0','0','1','0','0','0','1','1','1','1','1','0','1','0','0','0','1','0','1');
+INSERT INTO `tbl_sistem_kemudi_dua` VALUES (1,2,'1','1','1','1','1','0','0','0','1','0','1','1','0','0','0','0','0','0','0','0','0','1','0'),(2,3,'0','1','1','0','0','1','0','0','0','1','1','1','1','1','0','0','1','0','0','0','1','0','1');
 /*!40000 ALTER TABLE `tbl_sistem_kemudi_dua` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -806,4 +808,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-12 10:43:53
+-- Dump completed on 2016-11-14  5:08:40
