@@ -100,7 +100,7 @@ class Home extends CI_Controller {
 		//jika data null
 		if($datax == null){
 			echo '<p>'.$this->lang->line('error_searchresult').'</p>';
-			echo '<a href='.site_url('home/searchSpesifik').' class="btn btn-primary">'.$this->lang->line('button_spesifik').'</a>';
+			//echo '<a href='.site_url('home/searchSpesifik').' class="btn btn-primary">'.$this->lang->line('button_spesifik').'</a>';
 		}else{
 
 		echo '<div class="container">';

@@ -63,6 +63,7 @@ class Homes extends CI_Model {
         $this->db->join($this->_ruanggas,'tbl_ruang_gas.id_uji = periksa.id_uji');
         $this->db->join($this->_mesin,'tbl_mesin.id_uji = periksa.id_uji');
         $this->db->join($this->_lain,'tbl_lainlain.id_uji = periksa.id_uji');
+        $this->db->join($this->_hasiluji,'tbl_hasil_uji.id_uji = periksa.id_uji');
         $this->db->where('no_uji',$no);
         $query = $this->db->get();
         return $query->result();

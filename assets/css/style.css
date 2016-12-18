@@ -22,9 +22,12 @@ dd.classl {width:160px;}
 dd.classk {margin-left:0px; text-align: left;}
 .upper {text-transform: uppercase;}
 
+.f36 {font-size:25px;}
+
 .mar-top10 {margin-top:10px;}
 .mar-top20 {margin-top:20px;}
 .mar-top30 {margin-top:30px;}
+.mar-bot30 {margin-bottom: 30px;}
 
 .navbar-default {background:#fff; border-color:#dddddd; border-top:none; border-right: none; border-left: none; border-bottom: 1px solid #dddddd;}
 .navbar {border-radius: 0px;}

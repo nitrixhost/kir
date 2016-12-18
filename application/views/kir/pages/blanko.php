@@ -1,7 +1,7 @@
 <?php if($this->session->userdata('error')){?>
 <div class="alert alert-danger" role="alert"><?php echo $this->session->userdata('error');?> <a href="<?php echo base_url();?>" class="btn btn-primary"><?php echo $this->lang->line('button_back');?></a></div>
 <?php }else{?>
-<div class="container" id="list">
+<div class="container mar-bot30" id="list">
 	<div class="row">
 		<div class="col-md-1"><img src="<?php echo base_url().$this->config->item('asset_image');?>logo.png" class="img-responsive"></div>
 		<div class="col-md-10">
@@ -361,11 +361,55 @@
 					<tr>
 						<td>
 							<dl class="dl-horizontal">
+								<dd class="classk"><strong><?php echo $this->lang->line('td_sistem_slip');?> <?php echo $r->others_sistem_slip;?> </dt>m/Km</strong>
+								<dd class="classk"><?php echo $this->lang->line('td_efisiensi_rem');?></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_rem_utama');?> <?php echo $r->rem_utama;?> %g</dd>
+								<dd class="classk"><?php echo $this->lang->line('td_rem_parkir');?> <?php echo $r->rem_parkir;?> %g</dd>
+								<dd class="classk"><?php echo $this->lang->line('td_gaya_rem');?></dt>
+								<dd class="classk"><?php echo $this->lang->line('td_s1');?> Kr <?php echo $r->others_gaya_rem_s1;?></dd>
+								<dd class="classk"><?php echo $this->lang->line('td_s2');?> Kr <?php echo $r->others_gaya_rem_s2;?></dd>
+								<dd class="classk"><?php echo $this->lang->line('td_s3');?> Kr <?php echo $r->others_gaya_rem_s3;?></dd>
+								<dd class="classk"><?php echo $this->lang->line('td_rp');?> Kr <?php echo $r->others_gaya_rem_rp;?></dd>
+								<dd class="classk"><?php echo $this->lang->line('td_speedometer_tester');?> <?php echo $r->speedometer_tester_indikasi;?></dd>
+
 							</dl>
 						</td>
 					</tr>
 				</table>
 			</div>
+		</div>
+	</div>
+	<hr class="style2" />
+	<div class="row top-mar30">
+		<div class="col-md-4">
+		<p class="f36"><strong><?php echo $this->lang->line('td_catatan');?></strong> : <?php echo $r->catatan;?></p>
+		<p class="upper"><?php echo $this->lang->line('td_hasil_pengujian');?></p>
+		<dl class="dl-horizontal">
+		<dt class="list-dt table-dt"><input type="checkbox" name="zerp" <?php if($r->hasil_uji_lulus == 1){echo "checked"; }else{}?>> <?php echo $this->lang->line('td_lulus');?></dt>
+		<dd class="classk"><input type="checkbox" name="zero" <?php if($r->hasil_uji_gagal == 1){echo "checked"; }else{}?>><?php echo $this->lang->line('td_gagal');?></dd>
+		</dl>
+		<p><?php echo $this->lang->line('td_persetujuan_numpang_uji');?></p>
+		<dl class="dl-horizontal">
+			<dt class="list-dt"><?php echo $this->lang->line('td_dari');?></dt>
+  			<dd class="classl">: <?php echo $r->persetujuan_dari;?></dd>
+  			<dt class="list-dt"><?php echo $this->lang->line('td_nomor');?></dt>
+  			<dd class="classl">: <?php echo $r->nomor_persetujuan;?></dd>
+  			<dt class="list-dt"><?php echo $this->lang->line('td_tanggal');?></dt>
+  			<dd class="classl">: <?php echo $r->tanggal_persetujuan;?></dd>
+		</dl>
+		</div>
+		<div class="col-md-4 col-md-offset-4">
+			<div class="form-group mar-blank1">
+				<label for="nouji"><?php echo $this->lang->line('tanggal_pemeriksaan_berikutnya');?></label>
+				<input type="text" name="tanggal_pemeriksaan_berikut" value="<?php echo $r->tanggal_pemeriksaan_berikut;?>" class="form-control" disabled>
+			</div>
+			<div class="form-group">
+				<label for="nokendaraan"><?php echo $this->lang->line('untuk_diperbaiki_sampai');?></label>
+				<input type="text" name="perbaiki_sampai" value="<?php echo $r->untuk_di_perbaiki_sampai_dengan_tanggal;?>" class="form-control" disabled>
+			</div>
+			<p class="mar-top40 f36">
+				<?php echo $this->lang->line('tanda_tangan_penguji');?>
+			</p>
 		</div>
 	</div>
 	<?php }?>
